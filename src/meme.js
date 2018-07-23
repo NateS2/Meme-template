@@ -11,12 +11,12 @@ class MemePhoto extends Component {
   };
 
   componentDidMount() {
-    console.log("component mounted");
+    // console.log("component mounted");
     // this.formatURL();
   }
 
   async componentWillReceiveProps(newProps) {
-    console.log("New Props", newProps);
+    // console.log("New Props", newProps);
     await this.setState({ body: newProps.body, images: newProps.images });
     this.createParagraphs();
     this.formatURL();
@@ -29,7 +29,7 @@ class MemePhoto extends Component {
     } else {
       var paragraphBody = body.split(/[\r\n\t]+/gm);
     }
-    console.log("paragraphBody", paragraphBody);
+    // console.log("paragraphBody", paragraphBody);
 
     if (paragraphBody.length > 0) {
       if (paragraphBody.length === 1) {
@@ -94,7 +94,7 @@ class MemePhoto extends Component {
     mutableBottomLine = mutableBottomLine.replace(new RegExp("\\#", "g"), "~h");
     mutableTopLine = mutableTopLine.replace(new RegExp("\\/", "g"), "~s");
     mutableBottomLine = mutableBottomLine.replace(new RegExp("\\/", "g"), "~s");
-    console.log("mutable", mutableTopLine);
+    // console.log("mutable", mutableTopLine);
     var url =
       " https://memegen.link/custom/" +
       mutableTopLine +
@@ -102,7 +102,7 @@ class MemePhoto extends Component {
       mutableBottomLine +
       ".jpg?alt=" +
       imageURL;
-    console.log("url", url);
+    // console.log("url", url);
     this.setState({ url: url });
   };
 
